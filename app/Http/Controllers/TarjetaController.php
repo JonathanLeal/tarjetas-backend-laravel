@@ -58,7 +58,7 @@ class TarjetaController extends Controller
                         ->join('users as u', 't.id_users', '=', 'u.id')
                         ->join('tarjeta as ts', 't.id_tarjeta', '=', 'ts.id')
                         ->where('ts.id_usuario', $user->id)
-                        ->select('t.id','u.name','ts.monto','ts.numTarjeta','t.concepto','t.fecha','t.aignado_a','t.dia')
+                        ->select('t.id','u.name','t.monto','ts.numTarjeta','t.concepto','t.fecha','t.aignado_a','t.dia')
                         ->get();
     
         if ($transacciones->count() <= 0) {
